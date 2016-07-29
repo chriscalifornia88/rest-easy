@@ -1,6 +1,8 @@
 <?php
 namespace Chriscalifornia88\RestEasy;
 
+use Illuminate\Support\ServiceProvider;
+
 /**
  * User: Christian Augustine
  * Date: 7/28/16
