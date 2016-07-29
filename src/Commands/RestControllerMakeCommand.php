@@ -26,16 +26,6 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     private $model;
 
     /**
-     * Create a new command instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->model = $this->argument('model');
-    }
-
-    /**
      * The type of class being generated.
      *
      * @var string
