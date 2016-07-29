@@ -65,6 +65,24 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     }
 
     /**
+     * Replace the class name for the given stub.
+     *
+     * @param  string  $stub
+     * @param  string  $name
+     * @return string
+     */
+    protected function replaceClass($stub, $name)
+    {
+        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+
+        $class = str_replace('DummyClass', $class, $stub);
+
+        $class = str_replace("DummyModel", "'App\\Models\\$this->model'", $class);
+        
+        return $class;
+    }
+
+    /**
      * Build the class with the given name.
      *
      * Remove the base controller import if we are already in base namespace.
@@ -76,8 +94,6 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     {
         $namespace = $this->getNamespace($name);
 
-        $class = str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
-
-        return str_replace("DummyModel", "'App\\Models\\$this->model'", $class);
+        return str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
     }
 }
