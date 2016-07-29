@@ -1,7 +1,6 @@
 <?php
 namespace Chriscalifornia88\RestEasy;
 
-use Chriscalifornia88\RestEasy\Commands\RestControllerMakeCommand;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -19,7 +18,7 @@ class RestEasyServiceProvider extends ServiceProvider
     protected $defer = true;
     
     protected $commands = [
-        RestControllerMakeCommand::class
+        'Chriscalifornia88\RestEasy\Commands\RestControllerMakeCommand'
     ];
 
     /**
