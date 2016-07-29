@@ -76,8 +76,8 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     {
         $namespace = $this->getNamespace($name);
 
-        return str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
+        $class = str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
 
-        return str_replace("DummyModel", '', "'App\\Models\\$this->model'");
+        return str_replace("DummyModel", "'App\\Models\\$this->model'", $class);
     }
 }
