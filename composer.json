@@ -1,0 +1,19 @@
+{
+    "name": "chriscalifornia88/rest-easy",
+    "authors": [
+        {
+            "name": "Christian Augustine",
+            "email": "chriscalifornia88@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chriscalifornia88\\RestEasy\\": "src/"
+        }
+    }
+}
