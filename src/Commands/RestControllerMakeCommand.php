@@ -1,4 +1,5 @@
 <?php
+namespace Chriscalifornia88\RestEasy\Commands;
 
 /**
  * User: Christian Augustine

@@ -1,11 +1,12 @@
 <?php
+namespace Chriscalifornia88\RestEasy;
 
 /**
  * User: Christian Augustine
  * Date: 7/28/16
  * Time: 8:21 PM
  */
-class RestApiServiceProvider extends ServiceProvider
+class RestEasyServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
