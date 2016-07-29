@@ -49,8 +49,8 @@ class RestEasyServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['command.rest-controller.make'] = $this->app->share(
-            function () {
-                return new RestControllerMakeCommand();
+            function ($app) {
+                return new RestControllerMakeCommand($app['files']);
             }
         );
 
