@@ -1,6 +1,7 @@
 <?php
 namespace Chriscalifornia88\RestEasy;
 
+use Chriscalifornia88\RestEasy\Commands\RestControllerMakeCommand;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -16,6 +17,10 @@ class RestEasyServiceProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = true;
+    
+    protected $commands = [
+        RestControllerMakeCommand::class
+    ];
 
     /**
      * Bootstrap the application events.
@@ -33,10 +38,6 @@ class RestEasyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands(
-            [
-                RestControllerMakeCommand::class,
-            ]
-        );
+        $this->commands($this->commands);
     }
 }
