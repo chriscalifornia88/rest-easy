@@ -1,7 +1,8 @@
 <?php
 
-namespace Chriscalifornia88\RestEasy;
+namespace Chriscalifornia88\RestEasy\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -58,8 +59,8 @@ class RestController extends Controller
         $ids = array_values($ids);
 
         $models = static::getModelChain();
-        
-        if($stopAtLastParent) {
+
+        if ($stopAtLastParent) {
             array_pop($models);
         }
 
