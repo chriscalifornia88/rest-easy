@@ -1,0 +1,17 @@
+<?php
+
+namespace DummyNamespace;
+
+use Chriscalifornia88\RestEasy\Controllers\RestController;
+use Illuminate\Http\Request;
+
+use DummyRootNamespaceHttp\Requests;
+use DummyRootNamespaceHttp\Controllers\Controller;
+
+class DummyClass extends RestController
+{
+    const MODEL = DummyModel;
+
+    const VALIDATION_CREATE = [];
+    const VALIDATION_UPDATE = [];
+}
