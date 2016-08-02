@@ -22,9 +22,6 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
      */
     protected $description = 'Create a Rest Easy controller';
 
-    /** @var string */
-    private $model;
-
     /**
      * The type of class being generated.
      *
@@ -67,18 +64,16 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     /**
      * Replace the class name for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param  string $stub
+     * @param  string $name
      * @return string
      */
     protected function replaceClass($stub, $name)
     {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+        $class = str_replace($this->getNamespace($name) . '\\', '', $name);
 
         $class = str_replace('DummyClass', $class, $stub);
 
-        $class = str_replace("DummyModel", "'App\\Models\\$this->model'", $class);
-        
         return $class;
     }
 
@@ -94,6 +89,8 @@ class RestControllerMakeCommand extends \Illuminate\Console\GeneratorCommand
     {
         $namespace = $this->getNamespace($name);
 
-        return str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
+        $class = str_replace("use $namespace\Controller;\n", '', parent::buildClass($name));
+
+        return str_replace("DummyModel", "'App\\Models\\" . $this->argument('model') . "'", $class);
     }
 }
